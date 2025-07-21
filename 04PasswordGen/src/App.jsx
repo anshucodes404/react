@@ -21,8 +21,8 @@ function App() {
       }
       setPassword(pass);
     },
-    [length, incNumbers, incCharacters, setPassword] //this is the array which includes what all values to keep in cache
-    //useCallback remebers the values of incNumbers and all variables in dependency array and not runs the lines in which variable value has not been changed
+    [length, incNumbers, incCharacters, setPassword]
+    //The function do not gets recreated in the memory unless and until dependency array values changes when using useCallback
   );
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
   const copy = () => {
     passref.current?.select();
     window.navigator.clipboard.writeText(password);
-    alert("Password copied")
+    alert("Password copied");
   };
 
   return (
